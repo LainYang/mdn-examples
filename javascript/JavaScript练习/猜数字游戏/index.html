@@ -68,9 +68,20 @@
             lowOrHi.textContent = '';
             setGameOver();
         } else if (guessCount === 10) {
-            lastResult.textContent = '!!!GAME　!!!'
-            
+            lastResult.textContent = '!!!GAME　OVER!!!';
+            setGameOver();
+        } else {
+          lastREsult.textContent = '你猜错了！';
+          lastResult.style.backgroundColor = 'red';
+          if(userGuess < randomNumber) {
+            lowOrHi.textContent = '你猜低了！';
+          } else if(userGuess > randomNumber) {
+            lowOrHi.textContent = '你猜高了';
+          }
         }
+        guessCount++;
+        guessField.value = '';
+        guessField.focus();
         }
     </script>
   </body>
